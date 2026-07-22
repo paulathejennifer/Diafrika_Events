@@ -49,29 +49,13 @@ export default function Button({
     );
   }
 
-  // Anchor links (#gallery)
-  if (href?.startsWith("#")) {
-    return (
-      <a
-        href={href}
-        className={styles}
-        onClick={(e) => {
-          e.preventDefault();
-
-          const element = document.querySelector(href);
-
-          if (element) {
-            element.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        }}
-      >
-        {content}
-      </a>
-    );
-  }
+if (href?.startsWith("#")) {
+  return (
+    <a href={href} className={styles}>
+      {content}
+    </a>
+  );
+}
 
   // Internal Next.js routes
   if (href) {

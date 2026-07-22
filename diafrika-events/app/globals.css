@@ -26,6 +26,9 @@
     opacity: 1;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 /* Rethinking the shape entirely: instead of the card sitting DIMMED
    most of the time and popping UP briefly, it now sits at NORMAL
    scale/full opacity almost the whole cycle, with just a brief,
