@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F8F5F0;
+  --color-white: #FFFFFF;
+  --color-charcoal: #2E2A27;
+  --color-warmgray: #6F675F;
+  --color-gold: #C79A47;
+  --color-gold-hover: #B68633;
+  --color-olive: #4A5133;
+  --color-olive-hover: #394028;
+  --color-footer: #2F3424;
+  --color-border: #E7DDD1;
+
+  --font-serif: var(--font-heading);
+  --font-heading-script: var(--font-script);
+  --font-sans: var(--font-body);
+}
+@keyframes pop-in {
+  0%, 8%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  4% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+/* Rethinking the shape entirely: instead of the card sitting DIMMED
+   most of the time and popping UP briefly, it now sits at NORMAL
+   scale/full opacity almost the whole cycle, with just a brief,
+   subtle scale-up "pulse" at the very start of its turn (4% mark)
+   before settling back to rest immediately. The pulse duration is now
+   a tiny fraction of the total cycle, and the hold (8% to 100%) is
+   the vast majority of it — meaning for most of the animation, the
+   card just sits there calmly, giving the reader time to actually
+   read the quote before the next one's turn begins. */
+
+body {
+  font-family: var(--font-sans);
+}
