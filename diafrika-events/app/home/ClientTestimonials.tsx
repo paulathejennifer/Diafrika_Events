@@ -3,7 +3,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote: "DiAfrika made our wedding more beautiful than we ever imagined. Every detail was thoughtfully done, from the décor to the catering. Our guests are still talking about it.",
-    author: "Wairimu & Brian",
+    author: "Wairimu & Gilbert",
   },
   {
     quote: "The decorations, tents, photography, and sound setup were all perfect. They truly made my daughter's graduation celebration unforgettable.",

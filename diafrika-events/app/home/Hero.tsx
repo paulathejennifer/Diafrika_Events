@@ -58,7 +58,7 @@ export default function Hero() {
 
 <div className="flex flex-wrap items-center gap-4">
 <Button
-  href="wa.me/message/OZO2XVDLBPYUJ1"
+  href="https://wa.me/message/OZO2XVDLBPYUJ1"
   variant="primary"
   icon={<WhatsAppIcon className="w-4 h-4" />}
 >

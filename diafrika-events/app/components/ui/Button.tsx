@@ -8,9 +8,6 @@ type ButtonProps = {
   className?: string;
   onClick?: () => void;
   icon?: ReactNode;
-  // instead of a boolean like showArrow, this accepts any renderable
-  // icon element directly — more flexible, since now ANY icon can be
-  // passed in, not just one hardcoded ArrowRight.
 };
 
 const baseStyles =
@@ -37,10 +34,46 @@ export default function Button({
       {children}
     </>
   );
-  // icon rendered BEFORE children, matching your screenshot's "icon
-  // then text" order — different from W Exclusive's arrow, which came
-  // AFTER the text. Order matters here, worth noticing the difference.
 
+  // External links (WhatsApp, Instagram, etc.)
+  if (href?.startsWith("http")) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  // Anchor links (#gallery)
+  if (href?.startsWith("#")) {
+    return (
+      <a
+        href={href}
+        className={styles}
+        onClick={(e) => {
+          e.preventDefault();
+
+          const element = document.querySelector(href);
+
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  // Internal Next.js routes
   if (href) {
     return (
       <Link href={href} className={styles}>
